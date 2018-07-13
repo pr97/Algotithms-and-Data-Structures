@@ -39,6 +39,7 @@ class Graph{
 			
 			while(!heap.empty()){
 				pair<int, int> node = heap.top();
+				heap.pop(); // IMP: Pop right after extraction to avoid serious bug!!!
 				if(!visited.at(node.second)){
 					visited.at(node.second) = true;
 					int u = node.second;
@@ -53,7 +54,7 @@ class Graph{
 						}
 					}
 				}
-				heap.pop();
+				// heap.pop(); // REMEMBER TO POP RIGHT AFTER MIN_EXTRACTION AND *NOT* HERE.
 			}
 			int shortest_distance = dist.at(dst);
 			int p = prev.at(dst);
