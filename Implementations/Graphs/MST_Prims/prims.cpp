@@ -36,11 +36,17 @@ class Graph{
 			q.push(make_pair(0, 0));
 			while(!q.empty()){
 				pair<int, int> curr = q.top();
-				q.pop(); // IMP: Pop right after extraction to avoid serious bug!!!
+				/*
+				* DON'T POP BEFORE THE 'if(visited.at(curr.second))' statement to avoid double popping. This leads to pop attepmpt when no element is present in priority_queue.
+				* POP AFTER THE 'if' statement.
+				* Alternatively, to avoid this concern altogether, just use 'if(!visited)' and write the code to execute inside it.
+				*/
+				// q.pop(); //MORE_IMP: See comment above. Don't POP here. IMP: Pop right after extraction to avoid serious bug!!!  
 				if(visited.at(curr.second)){
 					q.pop();
 					continue;
 				}
+				q.pop();
 				int u = curr.second, near_u = curr.first;
 				mst_sum += near_u;
 				visited.at(u) = true;
@@ -71,7 +77,7 @@ void print_vec(vector<int> v){
 int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-	Graph g(6); // pass '4' as argument for TEST_CASE_1 and '6' as argument for TEST_CASE_2.
+	Graph g(5); // pass '4' as argument for TEST_CASE_1, '6' as argument for TEST_CASE_2 and '5' as argument for TEST_CASE_3.
 	// TEST_CASE_1 | Expected mst_sum = 4 | Expected parent array = {0, 0, 0, 2}
 	// g.add_edge(0, 2, 2);
 	// g.add_edge(0, 3, 3);
@@ -80,18 +86,34 @@ int main(){
 	// g.add_edge(3, 2, 1);
 	// -------------------------------------------------------------------------
 	// TEST_CASE_2 | Expected mst_sum = 14 | Expected parent array = {}
-	g.add_edge(0, 1, 4);
-	g.add_edge(0, 4, 1);
-	g.add_edge(0, 3, 2);
-	g.add_edge(3, 4, 3);
-	g.add_edge(1, 4, 5);
-	g.add_edge(1, 2, 8);
-	g.add_edge(1, 5, 6);
-	g.add_edge(4, 5, 9);
-	g.add_edge(2, 5, 1);
+	// g.add_edge(0, 1, 4);
+	// g.add_edge(0, 4, 1);
+	// g.add_edge(0, 3, 2);
+	// g.add_edge(3, 4, 3);
+	// g.add_edge(1, 4, 5);
+	// g.add_edge(1, 2, 8);
+	// g.add_edge(1, 5, 6);
+	// g.add_edge(4, 5, 9);
+	// g.add_edge(2, 5, 1);
+	// -------------------------------------------------------------------------
+	// TEST_CASE_3 | Expected mst_sum = 15 | Expected parent array = {}
+	g.add_edge(0, 1, 3);
+	g.add_edge(0, 2, 4);
+	g.add_edge(3, 1, 6);
+	g.add_edge(4, 1, 2);
+	g.add_edge(1, 2, 5);
+	g.add_edge(2, 4, 7);
 	// -------------------------------------------------------------------------
 	pair<int, vector<int> > result = g.prims();
 	cout << result.first << "\n--";
 	print_vec(result.second);
 	return 0;
+// 	5 6
+// 1 2 3
+// 1 3 4
+// 4 2 6
+// 5 2 2
+// 2 3 5
+// 3 5 7
+// 1
 }
