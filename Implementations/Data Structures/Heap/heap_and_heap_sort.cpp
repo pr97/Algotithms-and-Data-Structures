@@ -13,7 +13,7 @@ class MaxHeap{
 		}
 		MaxHeap(vector<int> vec){
 			for(vector<int> :: iterator itr = vec.begin(); itr != vec.end(); ++itr)
-				insert(T(*itr));
+				this->insert(T(*itr));
 		}
 		int parent(int i){
 			return (i - 1) / 2;
@@ -118,7 +118,9 @@ void print_vec(vector<int> v){
 	}
 	cout << "\n";
 }
- 
+
+
+// Driver main function for testing.
 int main(){
 	// ios_base::sync_with_stdio(false);
 	// cin.tie(NULL);
@@ -160,7 +162,7 @@ int main(){
 	cout << "SORTED: ";
 	print_vec(sorted);
 	heap.clear();
-	cout << "\n+++++++++++++++++++++++++++++++++++\n";
+	// cout << "\n+++++++++++++++++++++++++++++++++++\n";
 	// MaxHeap<int> h(vector<int>({5, 4, 3, -1, 4}));
 	// h.print_heap();
 	// cout << h.extract_max() << " (exp: 5)\n";
