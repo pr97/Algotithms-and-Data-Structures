@@ -10,9 +10,10 @@ pair<int, int> partition3(vector<int>& a, int l, int r){
 	// Such a partition scheme is followed which assumes that the pivot is located at the last inclusive index of the array, which is 'r'.
 	for(int k = l; k <= r - 1; ++k){
 		if(a.at(k) < a.at(pivot)){
+			++j;
+			swap(a.at(j), a.at(k));
 			++i;
-			j = i;
-			swap(a.at(i), a.at(k));
+			swap(a.at(i), a.at(j));
 		}
 		else if(a.at(k) == a.at(pivot)){
 			++j;

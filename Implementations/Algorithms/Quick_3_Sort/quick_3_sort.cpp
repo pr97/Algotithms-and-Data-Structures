@@ -9,10 +9,17 @@ pair<int, int> partition3(vector<int>& a, int l, int r){
 	pivot = r;
 	// Such a partition scheme is followed which assumes that the pivot is located at the last inclusive index of the array, which is 'r'.
 	for(int k = l; k <= r - 1; ++k){
+		// The commented out section below works but is not the correct 3-way quick sort. Isn't as fast in case of a large number of duplicates (as 3-way quick sort is expected to be).
+		// if(a.at(k) < a.at(pivot)){
+		// 	++i;
+		// 	j = i;
+		// 	swap(a.at(i), a.at(k));
+		// }
 		if(a.at(k) < a.at(pivot)){
+			++j;
+			swap(a.at(j), a.at(k));
 			++i;
-			j = i;
-			swap(a.at(i), a.at(k));
+			swap(a.at(i), a.at(j));
 		}
 		else if(a.at(k) == a.at(pivot)){
 			++j;
