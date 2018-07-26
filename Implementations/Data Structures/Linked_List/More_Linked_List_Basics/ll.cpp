@@ -181,18 +181,34 @@ class LinkedList{
 			return t;
 		}
 		Node* get_mid_node(){
-			if(this->head == NULL)
-				return NULL;
-			Node* fast = this->head;
 			Node* slow = this->head;
-			while(fast != NULL){
-				if(fast->next != NULL && fast->next->next != NULL)
-					fast = fast->next->next;
-				else
-					break;
+			Node* fast = this->head;
+			if(fast == NULL)
+				return NULL;
+			if(fast->next == NULL)
+				return fast;
+			// while(fast->next != NULL && fast->next->next != NULL){ // Gets FIRST mid node in case of even number of nodes.
+			// 	slow = slow->next;
+			// 	fast = fast->next->next;
+			// }
+			while(fast != NULL && fast->next != NULL){ // Gets SECOND mid node in case of even number of nodes.
 				slow = slow->next;
+				fast = fast->next->next;
 			}
 			return slow;
+		}
+		void reverse(Node* first_node, Node** head_ref){
+			// Reverses the linked list starting from the the address of the node passed as 'first_node'.
+			Node* prev = NULL;
+			Node* next = NULL;
+			Node* current = first_node;
+			while(current){ // while(current != NULL)
+				next = current->next;
+				current->next = prev;
+				prev = current;
+				current = next;
+			}
+			*head_ref = prev;
 		}
 		void print_list(){
 			Node* t = this->head;

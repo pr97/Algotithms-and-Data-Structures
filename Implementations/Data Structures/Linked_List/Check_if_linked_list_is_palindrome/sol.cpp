@@ -139,11 +139,11 @@ class LinkedList{
 				return NULL;
 			if(fast->next == NULL)
 				return fast;
-			// while(fast->next != NULL && fast->next->next != NULL){
+			// while(fast->next != NULL && fast->next->next != NULL){ // Gets FIRST mid node in case of even number of nodes.
 			// 	slow = slow->next;
 			// 	fast = fast->next->next;
 			// }
-			while(fast != NULL && fast->next != NULL){
+			while(fast != NULL && fast->next != NULL){ // Gets SECOND mid node in case of even number of nodes.
 				slow = slow->next;
 				fast = fast->next->next;
 			}
