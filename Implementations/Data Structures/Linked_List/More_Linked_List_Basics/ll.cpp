@@ -146,6 +146,54 @@ class LinkedList{
 			if(t != NULL)
 				return t;
 		}
+		int length(){
+			if(this->head == NULL)
+				return 0;
+			int ctr = 0;
+			Node* t = this->head;
+			while(t != NULL){
+				++ctr;
+				t = t->next;
+			}
+			return ctr;
+		}
+		Node* get_nth_node_from_end(int n){
+			int len = this->length();
+			return this->get_nth_node(len - n + 1);
+		}
+		Node* get_nth_node_from_end_optimized_with_two_pointers(int n){
+			if(this->head == NULL)
+				return NULL;
+			if(n == 0) // If this 'if' statement is not present, the function ouputs the expected 'NULL' value but takes O(n) time instead of O(1).
+				return NULL;
+			Node* ref = this->head;
+			Node* t = this->head;
+			int ctr = n;
+			while(ref != NULL && ctr--){
+				ref = ref->next;
+			}
+			if(ref == NULL && ctr != 0)
+				return NULL;
+			while(ref != NULL){
+				t = t->next;
+				ref = ref->next;
+			}
+			return t;
+		}
+		Node* get_mid_node(){
+			if(this->head == NULL)
+				return NULL;
+			Node* fast = this->head;
+			Node* slow = this->head;
+			while(fast != NULL){
+				if(fast->next != NULL && fast->next->next != NULL)
+					fast = fast->next->next;
+				else
+					break;
+				slow = slow->next;
+			}
+			return slow;
+		}
 		void print_list(){
 			Node* t = this->head;
 			cout << "\nhead-->";
@@ -206,43 +254,70 @@ int main(){
 	ll.delete_node_with_address(ll.head);
 	ll.print_list();
 	// At this point, the list looks like so: head-->[1]-->[-1]-->[0]-->[-2]-->[0]-->[100]-->X
-	ll.delete_node_with_address(ll.head->next);
-	ll.print_list();
-	// At this point, the list looks like so: head-->[1]-->[0]-->[-2]-->[0]-->[100]-->X
-	ll.delete_node_with_address(ll.head->next->next->next->next);
-	ll.print_list();
-	// At this point, the list looks like so: head-->[1]-->[0]-->[-2]-->[0]-->X
-	ll.delete_node_with_address(ll.head->next->next);
-	ll.print_list();
-	// At this point, the list looks like so: head-->[1]-->[0]-->[0]-->X
-	ll.insert_after(-2, ll.head->next);
-	// At this point, the list looks like so: head-->[1]-->[0]-->[-2]-->[0]-->X
-	ll.insert_after(100, ll.head->next->next->next);
-	ll.print_list();
-	// At this point, the list looks like so: head-->[1]-->[0]-->[-2]-->[0]-->[100]-->X
-	ll.insert_after(-100, rouge_address);
-	ll.delete_node_with_address(ll.head->next);
-	ll.delete_node_with_address(ll.head->next->next);
-	ll.print_list();
-	// At this point, the list looks like so: head-->[1]-->[-2]-->[100]-->X
-	ll.delete_node_with_address(ll.head->next);
-	ll.print_list();
-	// At this point, the list looks like so: head-->[1]-->[100]-->X
-	ll.delete_node_with_address(ll.head);
-	ll.print_list();
-	// At this point, the list looks like so: head-->[100]-->X
-	ll.delete_node_with_address(ll.head);
-	ll.print_list();
-	// At this point, the list looks like so: head-->
+	cout << "\nTesting mid-node function:";
+	Node* b = ll.get_mid_node();
+	cout << "\n" << b->data << "\t<--- Data of middle node.\n";
+	ll.pop();
+	b = ll.get_mid_node();
+	cout << "\n" << b->data << "\t<--- Data of middle node.\n";
+	// At this point, the list looks like so: head-->[-1]-->[0]-->[-2]-->[0]-->[100]-->X
 	ll.push(1);
-	ll.append(100);
-	ll.print_list();
-	// At this point, the list looks like so: head-->[1]-->[100]-->X
-	ll.delete_node_with_address(ll.head->next);
-	ll.print_list();
-	// At this point, the list looks like so: head-->[1]-->X
-	ll.delete_node_with_address(ll.head);
-	ll.print_list();
+	// At this point, the list looks like so: head-->[1]-->[-1]-->[0]-->[-2]-->[0]-->[100]-->X
+	for(int i = 1; i <= 6; ++i){
+		Node* a = ll.get_nth_node_from_end_optimized_with_two_pointers(6 - i + 1);
+		assert(a != NULL);
+		cout << "\n" << a->data; // << "\t(Expected: 100)";
+		/*
+		Expected output (after completion of the loop):
+		------------------------------------------------
+		100
+		0
+		-2
+		0
+		-1
+		1
+		*/
+	}
+
+
+	// ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+	// ll.delete_node_with_address(ll.head->next);
+	// ll.print_list();
+	// // At this point, the list looks like so: head-->[1]-->[0]-->[-2]-->[0]-->[100]-->X
+	// ll.delete_node_with_address(ll.head->next->next->next->next);
+	// ll.print_list();
+	// // At this point, the list looks like so: head-->[1]-->[0]-->[-2]-->[0]-->X
+	// ll.delete_node_with_address(ll.head->next->next);
+	// ll.print_list();
+	// // At this point, the list looks like so: head-->[1]-->[0]-->[0]-->X
+	// ll.insert_after(-2, ll.head->next);
+	// // At this point, the list looks like so: head-->[1]-->[0]-->[-2]-->[0]-->X
+	// ll.insert_after(100, ll.head->next->next->next);
+	// ll.print_list();
+	// // At this point, the list looks like so: head-->[1]-->[0]-->[-2]-->[0]-->[100]-->X
+	// ll.insert_after(-100, rouge_address);
+	// ll.delete_node_with_address(ll.head->next);
+	// ll.delete_node_with_address(ll.head->next->next);
+	// ll.print_list();
+	// // At this point, the list looks like so: head-->[1]-->[-2]-->[100]-->X
+	// ll.delete_node_with_address(ll.head->next);
+	// ll.print_list();
+	// // At this point, the list looks like so: head-->[1]-->[100]-->X
+	// ll.delete_node_with_address(ll.head);
+	// ll.print_list();
+	// // At this point, the list looks like so: head-->[100]-->X
+	// ll.delete_node_with_address(ll.head);
+	// ll.print_list();
+	// // At this point, the list looks like so: head-->
+	// ll.push(1);
+	// ll.append(100);
+	// ll.print_list();
+	// // At this point, the list looks like so: head-->[1]-->[100]-->X
+	// ll.delete_node_with_address(ll.head->next);
+	// ll.print_list();
+	// // At this point, the list looks like so: head-->[1]-->X
+	// ll.delete_node_with_address(ll.head);
+	// ll.print_list();
 	// At this point, the list looks like so: head-->
 	if(ll.head != NULL && ll.head->next == NULL)
 		cout << "\nTAG! - Only one node left!";
@@ -347,4 +422,17 @@ int main(){
 	// ll.print_list();
 	// ll.de_append(); // checks the behaviour when the list is empty.
 	// ll.print_list();
+	// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	// cout << "\n\"Get length\" testing.";
+	// cout << "\n----------------------------";
+	// cout << "\n" << ll.length();
+	// ll.pop();
+	// ll.pop();
+	// cout << "\n" << ll.length();
+	// ll.pop();
+	// ll.pop();
+	// ll.pop();
+	// cout << "\n" << ll.length();
+	// ll.pop();
+	// cout << "\n" << ll.length() << "\n";
 /* ll_test */
