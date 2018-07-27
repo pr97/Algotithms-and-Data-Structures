@@ -234,6 +234,27 @@ class LinkedList{
 		}
 };
 
+Node* removeDuplicates(Node *root)
+{
+	unordered_set<int> s;
+	Node* t = root;
+	Node* prev = NULL;
+	Node* tbd;
+	while(t != NULL){
+		if(s.find(t->data) == s.end()){
+			s.insert(t->data);  
+			prev = t;                                                                         
+		}
+		else{
+			tbd = t;
+			prev->next = t->next;
+			delete tbd;
+		}
+		t = t->next;
+	}
+	return root;
+}
+
 int main(){
 	// ios_base::sync_with_stdio(false);
 	// cin.tie(NULL);
@@ -294,6 +315,9 @@ int main(){
 		1
 		*/
 	}
+	Node* no_duplicates = removeDuplicates(ll.head);
+
+
 
 
 	// ----------------------------------------------------------------------------------------------------------------------------------------------------------------
