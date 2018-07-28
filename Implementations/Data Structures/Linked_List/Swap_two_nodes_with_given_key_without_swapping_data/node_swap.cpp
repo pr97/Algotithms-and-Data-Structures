@@ -305,6 +305,40 @@ class LinkedList{
 		}
 };
 
+void swapNodes(Node** head_ref, int x, int y) // Learn how this works.
+{
+ 
+    // Nothing to do if x and y are same
+    if (x == y)
+        return;
+ 
+    Node **a = NULL, **b = NULL;
+ 
+    // search for x and y in the linked list
+    // and store therir pointer in a and b
+    while (*head_ref) {
+ 
+        if ((*head_ref)->data == x) {
+            a = head_ref;
+        }
+ 
+        else if ((*head_ref)->data == y) {
+            b = head_ref;
+        }
+ 
+        head_ref = &((*head_ref)->next);
+    }
+ 
+    // if we have found both a and b
+    // in the linked list swap current
+    // pointer and next pointer of these
+    if (a && b) {
+ 
+        swap(*a, *b);
+        swap(((*a)->next), ((*b)->next));
+    }
+}
+
 int main(){
 	// ios_base::sync_with_stdio(false);
 	// cin.tie(NULL);
@@ -315,7 +349,8 @@ int main(){
 	ll.append(4);
 	ll.append(5);
 	ll.print_list();
-	ll.swap_nodes_without_swapping_data(2, 26);
+	// ll.swap_nodes_without_swapping_data(2, 26);
+	swapNodes(&ll.head, 1, 2);
 	cout << "\nAfter swap:-";
 	ll.print_list();
 	return 0;
