@@ -1,0 +1,9 @@
+1. Learn iterative traversals of trees.
+
+2. Do this: https://www.geeksforgeeks.org/modify-binary-tree-get-preorder-traversal-using-right-pointers/
+
+3. Do this: https://gist.github.com/alexbowe/c709c0aa2a9a3c809eedcb6912920c80
+
+4. Do this: https://www.geeksforgeeks.org/inorder-succesor-node-binary-tree/
+
+5. 

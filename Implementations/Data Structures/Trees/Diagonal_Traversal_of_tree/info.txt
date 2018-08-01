@@ -1,0 +1,1 @@
+Implemented both with and without delimiters after each diagonal.
