@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room/0 -->
+<html lang="en" class="gr__practice_geeksforgeeks_org"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>N meetings in one room | Practice | GeeksforGeeks</title>
+		<link rel="icon" href="https://cdnpractice.geeksforgeeks.org/images/gfglogo.ico" type="image/x-icon">
+		
+		
+		<meta name="keywords" content="programming,coding,online, code online, online judge, practice, run code, test, expected outcome, programming competition, programming contest, online programming, online computer programming">
+		<meta name="description" content="There is one meeting room in Flipkart. There are n meetings in the form of (S [ i ], F [ i ]) where S [ i ]&amp;nbsp;is start time of meeting i and F&amp;nbsp;[ i ] is finish time of meeting i
+
+What is the maximum number of meetings that can be accommodate ">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta property="og:image" content="https://cdnpractice.geeksforgeeks.org/images/gfg_200X200.png">
+		<meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="200">
+        <meta property="og:image:height" content="200">
+
+		<script src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/f(7).txt"></script><script async="" src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/async-ads.js.download"></script><script src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/pubads_impl_rendering_236.js.download"></script><script type="text/javascript" async="" src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/f(8).txt"></script><script id="facebook-jssdk" src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/sdk.js.download"></script><script async="" src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/analytics.js.download"></script><script src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/jquery.min.js.download"></script>
+	    <script src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/bootstrap.min.js.download"></script>
+        <script src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/practice1.1.js.download"></script>        
+		<link rel="stylesheet" href="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/style-2.3.css">
+    <link href="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/icon" rel="stylesheet"> 
+       <link rel="stylesheet" href="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> <link href="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/font-awesome.min.css" rel="stylesheet">
+		<meta property="og:title" content="N meetings in one room | Practice | GeeksforGeeks ">
+<script>document.title="N meetings in one room | Practice | GeeksforGeeks";var def_lang ="";</script>		<style>
+            /*------------------Subtracting px based on the height of navbar-----------------*/
+            .jumbotron{
+                height: calc(100vh - 134px);
+            }
+            @media (min-width: 768px) and (max-width: 1114px){
+   			   .jumbotron{
+        			height: calc(100vh - 213px);
+      			}
+    		}
+		    @media (min-width: 1115px) and (max-width: 1295px){
+		       .jumbotron{
+		           height: calc(100vh - 199px);
+		        }
+		    }
+		    @media (min-width: 1296px) and (max-width: 1405px){
+	      		.jumbotron{
+	        		height: calc(100vh - 184px);
+		        }
+		    }
+		    @media(min-width: 1406px){
+      			.jumbotron{
+	        		height: calc(100vh - 134px);
+	      		}
+		    }
+		    @media (max-width: 767px){
+	      		.jumbotron{
+		        	height: auto;
+		      	}
+		    }
+    	</style>
+	 <script>
+                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                  ga('create', 'UA-71763465-1', 'auto');
+                  ga('send', 'pageview');
+
+        </script>
+
+
+			<link rel="canonical" href="https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room/0">
+	    <script async="async" src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/gpt.js.download"></script>
+    <script>
+      var googletag = googletag || {};
+      googletag.cmd = googletag.cmd || [];
+    </script>
+    <script type="text/javascript">
+    var gptAdSlots = [];
+        googletag.cmd.push(function() {
+    var verticalLT270Sizes = googletag.sizeMapping().addSize([1500, 768], [[250, 250], [240, 400], [160, 600], [180, 150], [120, 600], [200, 200],[234, 60]])
+                            .addSize([1025, 300], [[88,31], [120,20], [120,30], [120,240], [120,600], [160,600]])
+                            .addSize([0, 0],[[88,31], [120,20], [120,30], [120,240],[120, 600]]).build();
+
+    var verticalLT337Sizes = googletag.sizeMapping()
+                            .addSize([1200, 768], [[88,31], [120,20], [120,30], [120,60], [120,90], [120,240], [120,600], [125,125], [160,600], [168,28], [168,42], [180,150], [200,200], [200,446], [216,36], [216,54], [220,90], [234,60], [240,133], [240,400], [250,250], [250,360], [292,30], [300,31], [300,50], [300,75], [300,100], [300,250], [300,600], [300,1050], [320,50], [320,100], [320,480], [336,280]])
+                            .addSize([728, 300], [[88,31], [120,20], [120,30], [120,60], [120,90], [120,240], [120,600], [125,125], [160,600], [168,28], [168,42], [180,150], [200,200], [200,446], [216,36], [216,54], [220,90], [234,60], [240,133], [240,400], [250,250]])
+                            .addSize([0, 0], [160,600]).build();
+
+    gptAdSlots[0] = googletag.defineSlot('/27823234/Practice/Vertical_W<270', [[250, 250], [240, 400], [160, 600], [180, 150], [120, 600], [200, 200],[234, 60]], 'div-gpt-ad-1523612657686-0').defineSizeMapping(verticalLT270Sizes).addService(googletag.pubads());
+    gptAdSlots[1] = googletag.defineSlot('/27823234/Practice/Vertical_W<337', [[88,31], [120,20], [120,30], [120,60], [120,90], [120,240], [120,600], [125,125], [160,600], [168,28], [168,42], [180,150], [200,200], [200,446], [216,36], [216,54], [220,90], [234,60], [240,133], [240,400], [250,250], [250,360], [292,30], [300,31], [300,50], [300,75], [300,100], [300,250], [300,600], [300,1050], [320,50], [320,100], [320,480], [336,280]], 'div-gpt-ad-1523612657686-1').defineSizeMapping(verticalLT337Sizes).addService(googletag.pubads());
+    gptAdSlots[2] = googletag.defineSlot('/27823234/Practice/Vertical_W<337', [[88,31], [120,20], [120,30], [120,60], [120,90], [120,240], [120,600], [125,125], [160,600], [168,28], [168,42], [180,150], [200,200], [200,446], [216,36], [216,54], [220,90], [234,60], [240,133], [240,400], [250,250], [250,360], [292,30], [300,31], [300,50], [300,75], [300,100], [300,250], [300,600], [300,1050], [320,50], [320,100], [320,480], [336,280]], 'div-gpt-ad-1523612657686-2').defineSizeMapping(verticalLT337Sizes).addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+    });
+    </script>
+	   <link rel="stylesheet" type="text/css" href="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/cookieconsent.min.css">
+        <script src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/cookieconsent.min.js.download"></script>
+        <script>
+        window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+        "palette": {
+            "popup": {
+              "background": "#3c404d",
+              "text": "#d6d6d6"
+            },
+            "button": {
+              "background": "#8bed4f"
+            }
+          },
+          "theme": "classic",
+            onStatusChange: function(status) {
+            
+            },
+            law: {
+              regionalLaw: false,
+            },
+            location: true,
+            "content": {
+            "message": "We use cookies to ensure you have the best browsing experience on our website. By using our site, you acknowledge that you have read and understood our <a href=\"https://www.geeksforgeeks.org/cookie-policy/\" class=\"cc-link\" target=\"_blank\">Cookie Policy</a> & ",
+            "link": "Privacy Policy",
+            "href": "https://www.geeksforgeeks.org/privacy-policy/"
+            },
+        cookie: {
+        name : "geeksforgeeks_consent_status",
+        }
+        })});
+    
+        </script>
+	<link rel="preload" href="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/f(9).txt" as="script"><script type="text/javascript" src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/f(9).txt"></script><link rel="preload" href="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/f(10).txt" as="script"><script type="text/javascript" src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/f(10).txt"></script><script src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/pubads_impl_236.js.download" async=""></script><link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-29/html/container.html"><style id="ace_editor.css">.ace_editor {position: relative;overflow: hidden;font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;direction: ltr;}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;cursor: text;}.ace_content {position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;min-width: 100%;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");}.ace_scrollbar {position: absolute;right: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-v{overflow-x: hidden;overflow-y: scroll;top: 0;}.ace_scrollbar-h {overflow-x: scroll;overflow-y: hidden;left: 0;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;text-indent: -1em;-ms-user-select: text;-moz-user-select: text;-webkit-user-select: text;user-select: text;white-space: pre!important;}.ace_text-input.ace_composition {background: inherit;color: inherit;z-index: 1000;opacity: 1;text-indent: 0;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;word-wrap: normal;white-space: pre;height: 100%;width: 100%;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;}.ace_text-layer {font: inherit !important;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;border-left: 2px solid;transform: translatez(0);}.ace_slim-cursors .ace_cursor {border-left-width: 1px;}.ace_overwrite-cursors .ace_cursor {border-left-width: 0;border-bottom: 1px solid;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_smooth-blinking .ace_cursor {-webkit-transition: opacity 0.18s;transition: opacity 0.18s;}.ace_editor.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}.ace_line .ace_fold {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");}.ace_tooltip {background-color: #FFF;background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.1));background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;max-width: 100%;padding: 3px 4px;position: fixed;z-index: 999999;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;cursor: default;white-space: pre;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;pointer-events: none;}.ace_folding-enabled > .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");}.ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {-webkit-transition: opacity 0.4s ease 0.05s;transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {-webkit-transition: opacity 0.05s ease 0.05s;transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}.ace_br1 {border-top-left-radius    : 3px;}.ace_br2 {border-top-right-radius   : 3px;}.ace_br3 {border-top-left-radius    : 3px; border-top-right-radius:    3px;}.ace_br4 {border-bottom-right-radius: 3px;}.ace_br5 {border-top-left-radius    : 3px; border-bottom-right-radius: 3px;}.ace_br6 {border-top-right-radius   : 3px; border-bottom-right-radius: 3px;}.ace_br7 {border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px;}.ace_br8 {border-bottom-left-radius : 3px;}.ace_br9 {border-top-left-radius    : 3px; border-bottom-left-radius:  3px;}.ace_br10{border-top-right-radius   : 3px; border-bottom-left-radius:  3px;}.ace_br11{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-left-radius:  3px;}.ace_br12{border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br13{border-top-left-radius    : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br14{border-top-right-radius   : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br15{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;}
+/*# sourceURL=ace/css/ace_editor.css */</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;color: black;}.ace-tm .ace_cursor {color: black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-tm */</style><style>    .error_widget_wrapper {        background: inherit;        color: inherit;        border:none    }    .error_widget {        border-top: solid 2px;        border-bottom: solid 2px;        margin: 5px 0;        padding: 10px 40px;        white-space: pre-wrap;    }    .error_widget.ace_error, .error_widget_arrow.ace_error{        border-color: #ff5a5a    }    .error_widget.ace_warning, .error_widget_arrow.ace_warning{        border-color: #F1D817    }    .error_widget.ace_info, .error_widget_arrow.ace_info{        border-color: #5a5a5a    }    .error_widget.ace_ok, .error_widget_arrow.ace_ok{        border-color: #5aaa5a    }    .error_widget_arrow {        position: absolute;        border: solid 5px;        border-top-color: transparent!important;        border-right-color: transparent!important;        border-left-color: transparent!important;        top: -5px;    }</style><style>.ace_snippet-marker {    -moz-box-sizing: border-box;    box-sizing: border-box;    background: rgba(194, 193, 208, 0.09);    border: 1px dotted rgba(211, 208, 235, 0.62);    position: absolute;}</style><style>.ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {    background-color: #CAD6FA;    z-index: 1;}.ace_editor.ace_autocomplete .ace_line-hover {    border: 1px solid #abbffe;    margin-top: -1px;    background: rgba(233,233,253,0.4);}.ace_editor.ace_autocomplete .ace_line-hover {    position: absolute;    z-index: 2;}.ace_editor.ace_autocomplete .ace_scroller {   background: none;   border: none;   box-shadow: none;}.ace_rightAlignedText {    color: gray;    display: inline-block;    position: absolute;    right: 4px;    text-align: right;    z-index: -1;}.ace_editor.ace_autocomplete .ace_completion-highlight{    color: #000;    text-shadow: 0 0 0.01em;}.ace_editor.ace_autocomplete {    width: 280px;    z-index: 200000;    background: #fbfbfb;    color: #444;    border: 1px lightgray solid;    position: fixed;    box-shadow: 2px 3px 5px rgba(0,0,0,.2);    line-height: 1.4;}</style><script src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/theme-monokai.js.download"></script><script src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/mode-c_cpp.js.download"></script><script src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/jsapi" type="text/javascript"></script><style id="ace-monokai">.ace-monokai .ace_gutter {background: #2F3129;color: #8F908A}.ace-monokai .ace_print-margin {width: 1px;background: #555651}.ace-monokai {background-color: #272822;color: #F8F8F2}.ace-monokai .ace_cursor {color: #F8F8F0}.ace-monokai .ace_marker-layer .ace_selection {background: #49483E}.ace-monokai.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px #272822;}.ace-monokai .ace_marker-layer .ace_step {background: rgb(102, 82, 0)}.ace-monokai .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid #49483E}.ace-monokai .ace_marker-layer .ace_active-line {background: #202020}.ace-monokai .ace_gutter-active-line {background-color: #272727}.ace-monokai .ace_marker-layer .ace_selected-word {border: 1px solid #49483E}.ace-monokai .ace_invisible {color: #52524d}.ace-monokai .ace_entity.ace_name.ace_tag,.ace-monokai .ace_keyword,.ace-monokai .ace_meta.ace_tag,.ace-monokai .ace_storage {color: #F92672}.ace-monokai .ace_punctuation,.ace-monokai .ace_punctuation.ace_tag {color: #fff}.ace-monokai .ace_constant.ace_character,.ace-monokai .ace_constant.ace_language,.ace-monokai .ace_constant.ace_numeric,.ace-monokai .ace_constant.ace_other {color: #AE81FF}.ace-monokai .ace_invalid {color: #F8F8F0;background-color: #F92672}.ace-monokai .ace_invalid.ace_deprecated {color: #F8F8F0;background-color: #AE81FF}.ace-monokai .ace_support.ace_constant,.ace-monokai .ace_support.ace_function {color: #66D9EF}.ace-monokai .ace_fold {background-color: #A6E22E;border-color: #F8F8F2}.ace-monokai .ace_storage.ace_type,.ace-monokai .ace_support.ace_class,.ace-monokai .ace_support.ace_type {font-style: italic;color: #66D9EF}.ace-monokai .ace_entity.ace_name.ace_function,.ace-monokai .ace_entity.ace_other,.ace-monokai .ace_entity.ace_other.ace_attribute-name,.ace-monokai .ace_variable {color: #A6E22E}.ace-monokai .ace_variable.ace_parameter {font-style: italic;color: #FD971F}.ace-monokai .ace_string {color: #E6DB74}.ace-monokai .ace_comment {color: #75715E}.ace-monokai .ace_indent-guide {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWPQ0FD0ZXBzd/wPAAjVAoxeSgNeAAAAAElFTkSuQmCC) right repeat-y}
+/*# sourceURL=ace/css/ace-monokai */</style><link type="text/css" href="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/default+en.css" rel="stylesheet"><link type="text/css" href="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/default.css" rel="stylesheet"><script type="text/javascript" src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/default+en.I.js.download"></script><style type="text/css">.gsc-control-cse{font-family:Arial, sans-serif;border-color:#FFFFFF;background-color:#FFFFFF}.gsc-control-cse .gsc-table-result{font-family:Arial, sans-serif}input.gsc-input,.gsc-input-box,.gsc-input-box-hover,.gsc-input-box-focus{border-color:#4CB96B}.gsc-search-button-v2,.gsc-search-button-v2:hover,.gsc-search-button-v2:focus{border-color:#4CB96B;background-color:#4CB96B;background-image:none;filter:none}.gsc-search-button-v2 svg{fill:#FFFFFF}.gsc-tabHeader.gsc-tabhInactive{border-color:#4CB96B;background-color:#E9E9E9}.gsc-tabHeader.gsc-tabhActive{border-color:#4CB96B;border-bottom-color:#FFFFFF;background-color:#FFFFFF}.gsc-tabsArea{border-color:#4CB96B}.gsc-webResult.gsc-result,.gsc-results .gsc-imageResult{border-color:#FFFFFF;background-color:#FFFFFF}.gsc-webResult.gsc-result:hover,.gsc-imageResult:hover{border-color:#FFFFFF;background-color:#FFFFFF}.gs-webResult.gs-result a.gs-title:link,.gs-webResult.gs-result a.gs-title:link b,.gs-imageResult a.gs-title:link,.gs-imageResult a.gs-title:link b{color:#0000CC}.gs-webResult.gs-result a.gs-title:visited,.gs-webResult.gs-result a.gs-title:visited b,.gs-imageResult a.gs-title:visited,.gs-imageResult a.gs-title:visited b{color:#0000CC}.gs-webResult.gs-result a.gs-title:hover,.gs-webResult.gs-result a.gs-title:hover b,.gs-imageResult a.gs-title:hover,.gs-imageResult a.gs-title:hover b{color:#0000CC}.gs-webResult.gs-result a.gs-title:active,.gs-webResult.gs-result a.gs-title:active b,.gs-imageResult a.gs-title:active,.gs-imageResult a.gs-title:active b{color:#0000CC}.gsc-cursor-page{color:#0000CC}a.gsc-trailing-more-results:link{color:#0000CC}.gs-webResult .gs-snippet,.gs-imageResult .gs-snippet,.gs-fileFormatType{color:#000000}.gs-webResult div.gs-visibleUrl,.gs-imageResult div.gs-visibleUrl{color:#008000}.gs-webResult div.gs-visibleUrl-short{color:#008000}.gs-webResult div.gs-visibleUrl-short{display:none}.gs-webResult div.gs-visibleUrl-long{display:block}.gs-promotion div.gs-visibleUrl-short{display:none}.gs-promotion div.gs-visibleUrl-long{display:block}.gsc-cursor-box{border-color:#FFFFFF}.gsc-results .gsc-cursor-box .gsc-cursor-page{border-color:#4CB96B;background-color:#FFFFFF;color:#0000CC}.gsc-results .gsc-cursor-box .gsc-cursor-current-page{border-color:#4CB96B;background-color:#FFFFFF;color:#0000CC}.gsc-webResult.gsc-result.gsc-promotion{border-color:#336699;background-color:#FFFFFF}.gsc-completion-title{color:#0000CC}.gsc-completion-snippet{color:#000000}.gs-promotion a.gs-title:link,.gs-promotion a.gs-title:link *,.gs-promotion .gs-snippet a:link{color:#0000CC}.gs-promotion a.gs-title:visited,.gs-promotion a.gs-title:visited *,.gs-promotion .gs-snippet a:visited{color:#0000CC}.gs-promotion a.gs-title:hover,.gs-promotion a.gs-title:hover *,.gs-promotion .gs-snippet a:hover{color:#0000CC}.gs-promotion a.gs-title:active,.gs-promotion a.gs-title:active *,.gs-promotion .gs-snippet a:active{color:#0000CC}.gs-promotion .gs-snippet,.gs-promotion .gs-title .gs-promotion-title-right,.gs-promotion .gs-title .gs-promotion-title-right *{color:#000000}.gs-promotion .gs-visibleUrl,.gs-promotion .gs-visibleUrl-short{color:#008000}</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-webkit-user-select:none;white-space:nowrap}.gsst_e{opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gsq_a{padding:0}.gscsep_a{display:none}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em;-webkit-appearance:button}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gsfe_a{border:1px solid #b9b9b9;border-top-color:#a0a0a0;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);}.gsfe_b{border:1px solid #4d90fe;outline:none;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);}.gssb_a{padding:0 9px}.gsib_a{padding-right:8px;padding-left:8px}.gsst_a{padding-top:5.5px}.gssb_e{border:0}.gssb_l{margin:5px 0}input.gsc-input::-webkit-input-placeholder{font-size:14px}input.gsc-input:-moz-placeholder{font-size:14px}input.gsc-input::-moz-placeholder{font-size:14px}input.gsc-input:-ms-input-placeholder{font-size:14px}input.gsc-input:focus::-webkit-input-placeholder{color:transparent}input.gsc-input:focus:-moz-placeholder{color:transparent}input.gsc-input:focus::-moz-placeholder{color:transparent}input.gsc-input:focus:-ms-input-placeholder{color:transparent}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:-webkit-sticky;top:0}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_customer_chat_bounce_in_v1{animation-duration:250ms;animation-name:fb_bounce_in_v1}.fb_customer_chat_bounce_out_v1{animation-duration:250ms;animation-name:fb_bounce_out_v1}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_in_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_out_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bubble_pop_in{animation-duration:250ms;animation-name:fb_customer_chat_bubble_bounce_in_animation}.fb_customer_chat_bubble_animated_no_badge{box-shadow:0 3px 12px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_no_badge:hover{box-shadow:0 5px 24px rgba(0, 0, 0, .3)}.fb_customer_chat_bubble_animated_with_badge{box-shadow:-5px 4px 14px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_with_badge:hover{box-shadow:-5px 8px 24px rgba(0, 0, 0, .2)}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}.fb_mobile_overlay_active{background-color:#fff;height:100%;overflow:hidden;position:fixed;visibility:hidden;width:100%}@keyframes fb_bounce_in_v1{0%{opacity:0;transform:scale(.8, .8);transform-origin:bottom right}80%{opacity:.8;transform:scale(1.03, 1.03)}100%{opacity:1;transform:scale(1, 1)}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_v2_mobile_chat_started{0%{opacity:0;top:20px}100%{opacity:1;top:0}}@keyframes fb_bounce_out_v1{from{opacity:1}to{opacity:0}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_v2_mobile_chat_started{0%{opacity:1;top:0}100%{opacity:0;top:20px}}@keyframes fb_customer_chat_bubble_bounce_in_animation{0%{bottom:6pt;opacity:0;transform:scale(0, 0);transform-origin:center}70%{bottom:18pt;opacity:1;transform:scale(1.2, 1.2)}100%{transform:scale(1, 1)}}</style><style></style></head>
+	<body style="position: relative;" data-gr-c-s-loaded="true"><div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-banner cc-type-info cc-theme-classic cc-bottom cc-color-override-382972913 " style=""><!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">We use cookies to ensure you have the best browsing experience on our website. By using our site, you acknowledge that you have read and understood our <a href="https://www.geeksforgeeks.org/cookie-policy/" class="cc-link" target="_blank">Cookie Policy</a> &amp;  <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="https://www.geeksforgeeks.org/privacy-policy/" target="_blank">Privacy Policy</a></span><div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">Got it!</a></div><!--googleon: all--></div>
+    <nav id="social-share-btn" class="social-share-btn">
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room/0" class="social-sm-buttons"></a>
+      <a href="https://plus.google.com/share?url=https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room/0" class="social-sm-buttons"></a>
+      <a href="https://twitter.com/share?url=https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room/0" class="social-sm-buttons"></a>
+      <a href="https://www.facebook.com/sharer.php?u=https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room/0" class="social-sm-buttons"></a>
+      <a class="social-sm-buttons"><i class="material-icons">share</i></a>
+    </nav>
+
+<script>
+  // toggle class and animate all social-share buttons on click share button.
+  document.getElementById('social-share-btn').onclick = function() {
+    this.classList.toggle('social-share-btn-enable');
+  }
+</script>
+
+		<script>
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '534961220012939',
+		      xfbml      : true,
+		      version    : 'v2.5'
+		    });
+		  };
+
+		  (function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "//connect.facebook.net/en_US/sdk.js";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		</script>
+		<button id="scrollTopBtn" type="button" class="btn btn-success" style="background-color: #999;border-color:#999;right:80px;">
+			<span class="glyphicon glyphicon-chevron-up"></span>
+		</button>
+		<div class="container-fluid">
+			<div class="row whiteHeaderStripBar">
+				<div class="col-lg-3 col-md-2 col-sm-3 col-xs-12">
+					<a class="logo" href="https://practice.geeksforgeeks.org/">Practice</a><b style="color:#005C00;">&nbsp;&nbsp;&nbsp;BETA</b>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="border-width:0px;">    
+		                <script>
+			  				(function() {
+							    var cx = '005855190823060106138:ggjtcjog1xu';
+							    var gcse = document.createElement('script');
+							    gcse.type = 'text/javascript';
+							    gcse.async = true;
+							    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+							        '//cse.google.com/cse.js?cx=' + cx;
+							    var s = document.getElementsByTagName('script')[0];
+							    s.parentNode.insertBefore(gcse, s);
+							  })();
+						</script>
+						<div id="___gcse_0"><div class="gsc-control-cse gsc-control-cse-en"><div class="gsc-control-wrapper-cse" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box " id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 " style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="en" dir="ltr" spellcheck="false" placeholder="Custom Search" style="width: 100%; padding: 0px; border: none; margin: 0px; height: auto; outline: none; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;"><span class="gscb_a" id="gs_cb50">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></form><div class="gsc-results-wrapper-overlay"><div class="gsc-results-close-btn" tabindex="0"></div><div class="gsc-tabsAreaInvisible"><div class="gsc-tabHeader gsc-inline-block gsc-tabhActive">Custom Search</div><span class="gs-spacer"> </span></div><div class="gsc-tabsAreaInvisible"></div><div class="gsc-above-wrapper-area-invisible"><table cellspacing="0" cellpadding="0" class="gsc-above-wrapper-area-container"><tbody><tr><td class="gsc-result-info-container"><div class="gsc-result-info-invisible"></div></td><td class="gsc-orderby-container"><div class="gsc-orderby-invisible"><div class="gsc-orderby-label gsc-inline-block">Sort by:</div><div class="gsc-option-menu-container gsc-inline-block"><div class="gsc-selected-option-container gsc-inline-block"><div class="gsc-selected-option">Relevance</div><div class="gsc-option-selector"></div></div><div class="gsc-option-menu-invisible"><div class="gsc-option-menu-item gsc-option-menu-item-highlighted"><div class="gsc-option">Relevance</div></div><div class="gsc-option-menu-item"><div class="gsc-option">Date</div></div></div></div></div></td></tr></tbody></table></div><div class="gsc-adBlockInvisible"></div><div class="gsc-wrapper"><div class="gsc-adBlockInvisible"></div><div class="gsc-resultsbox-invisible"><div class="gsc-resultsRoot gsc-tabData gsc-tabdActive"><table cellspacing="0" cellpadding="0" class="gsc-resultsHeader"><tbody><tr><td class="gsc-twiddleRegionCell"><div class="gsc-twiddle"><div class="gsc-title">Web</div></div><div class="gsc-stats"></div><div class="gsc-results-selector gsc-all-results-active"><div class="gsc-result-selector gsc-one-result" title="show one result">&nbsp;</div><div class="gsc-result-selector gsc-more-results" title="show more results">&nbsp;</div><div class="gsc-result-selector gsc-all-results" title="show all results">&nbsp;</div></div></td><td class="gsc-configLabelCell"></td></tr></tbody></table><div><div class="gsc-expansionArea"></div></div></div></div></div></div><div class="gsc-modal-background-image" tabindex="0"></div></div></div></div>
+                </div>
+				<div class="col-lg-6 col-md-7 col-sm-5 col-xs-12 text-center">
+					<hgroup class="text-right" style="margin-top:5px;">   
+                      <a class="products" href="https://practice.geeksforgeeks.org/batch/Sudo%20Placement/">Sudo Placement</a>
+					</hgroup>
+					<div class="text-right" style="font-size: 18px;" id="userHandleHeader"><p style="display:inline-block;margin-right:8px;">Hello</p><a style="color:#0D7525;display:inline-block" href="https://auth.geeksforgeeks.org/user/pr97/practice/">pr97</a></div>
+				</div>
+			</div>
+			<div class="row">
+				<nav class="navbar navbar-default" style="margin-bottom:5px;min-height:38px;">
+					<div class="navbar-header" style="background-color: #fff;">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse" style="padding:0;">
+						<ul class="menu nav navbar-nav" style="margin:0px;">
+							<div class="col-sm-offset-2 col-xs-12 col-sm-2 ">
+								<div class="row">
+                                    <li class="dropdown col-xs-12 col-sm-12 text-center navhover" style="padding:0;">
+                                        <a href="https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room/0#" class="dropdown-toggle diff " style="font-size: 15px; color: white; hover:none;padding:8px;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <b>Level</b> <span class="caret"></span></a>
+                                            <ul class="dropdown-menu" style="margin: 0;padding: 0;width:100%;">
+                                                <li><a style="background-color: #4CB96B; color:white; font-size: 14px;border: 1px solid #fff;" href="https://practice.geeksforgeeks.org/School/0/0/"><b>School</b></a></li>
+                                                <li><a style="background-color: #4CB96B; color:white; font-size: 14px;border: 1px solid #fff;" href="https://practice.geeksforgeeks.org/Basic/0/0/"><b>Basic</b></a></li>
+                                                <li><a style="background-color: #4CB96B; color:white; font-size: 14px;border: 1px solid #fff;" href="https://practice.geeksforgeeks.org/Easy/0/0/"><b>Easy</b></a></li>
+                                                <li><a style="background-color: #4CB96B; color:white; font-size: 14px;border: 1px solid #fff;" href="https://practice.geeksforgeeks.org/Medium/0/0/"><b>Medium</b></a></li>
+                                                <li><a style="background-color: #4CB96B; color:white; font-size: 14px;border: 1px solid #fff;" href="https://practice.geeksforgeeks.org/Hard/0/0/"><b>Hard</b></a></li>
+
+                                            </ul>
+                                    </li>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-8">
+								<div class="row">
+                                    <li class="dropdown col-xs-12 col-sm-2 text-center navhover" style="padding:0;">
+                                       <a href="https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room/0#" class="dropdown-toggle diff" style="font-size: 15px; color: white; hover:none;padding:8px;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <b><i class="fas fa-info highlight"></i>&nbsp;&nbsp;Tracks</b> <span class="caret"></span></a>
+                                            <ul class="dropdown-menu" style="margin: 0;padding: 0;align: left !important;width:100%;">
+                                                <li><a style="background-color: #4CB96B; color:white; font-size: 14px;border: 1px solid #fff;" href="https://practice.geeksforgeeks.org/tracks/Placement/"><b>Placement</b></a></li>
+                                                <li><a style="background-color: #4CB96B; color:white; font-size: 14px;border: 1px solid #fff;" href="https://practice.geeksforgeeks.org/tracks/CPP/"><b>CPP</b></a></li>
+                                                <li><a style="background-color: #4CB96B; color:white; font-size: 14px;border: 1px solid #fff;" href="https://practice.geeksforgeeks.org/tracks/Java/"><b>Java</b></a></li>
+                                                <li><a style="background-color: #4CB96B; color:white; font-size: 14px;border: 1px solid #fff;" href="https://practice.geeksforgeeks.org/featured.php"><b>Featured Problems</b></a></li>
+                                            </ul>
+                                    </li>
+									<li class="col-xs-12 col-sm-2 text-center navhover" style="padding:0px;"><a class="wtext diff" style="padding:8px;" href="https://practice.geeksforgeeks.org/recent.php">What's New</a></li>
+									<li class="col-xs-12 col-sm-2 text-center navhover" style="padding:0px;"><a class="wtext diff" style="padding:8px;" href="https://practice.geeksforgeeks.org/contests/">Contests</a></li>
+									<li class="dropdown col-xs-12 col-sm-2 text-center navhover" style="padding:0;">
+										<a href="https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room/0#" class="dropdown-toggle diff" style="font-size: 15px; color: white; hover:none;padding:8px;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <b>Help</b> <span class="caret"></span></a>
+<ul class="dropdown-menu" style="margin: 0;padding: 0;width:100%;">
+    <li><a style="background-color: #4CB96B; color:white; font-size: 14px;border: 1px solid #fff;" href="https://practice.geeksforgeeks.org/faq.php"><b>FAQ</b></a>
+    </li>
+    <li><a style="background-color: #4CB96B; color:white; font-size: 14px;cursor:pointer;border: 1px solid #fff;" data-target="#reportIssueHeader" data-toggle="modal"><b>Report An Issue</b></a>
+    </li>
+</ul>
+
+		             				</li>
+		             			</div>
+		             		</div>
+						</ul>
+					</div>
+				</nav>
+			</div>
+
+<div class="modal fade" id="commentModalHeader" role="success">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4 class="modal-title">Message </h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+         <div class="modal-body">
+              <p>Error</p>
+            </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="reportIssueHeader" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+                <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title text-center" id="myModalLabel">Note: For issues in your code/test-cases, please use Comment-System of that particular problem.</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                          <label class="col-sm-1 control-label" for="inputTestCase">Details</label>
+                            <div class="col-sm-11">
+                              <textarea id="issueDescription" class="form-control" rows="7" cols="100" name="issueDescription"></textarea>
+                          </div>
+                        </div>
+                  </form>
+              </div>
+                <div class="modal-footer">
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="float:left;">Cancel</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" id="reportIssueHeaderMail" style="float:right;">Send</button>
+                </div>
+        </div>
+        </div>
+</div>
+
+<script>
+$(document).ready(function() { 
+                $('.dropdown-toggle').dropdown(); 
+                $.ajax({
+                        type: "POST",
+                        url: "/ajax/fetchUserDetails.php",
+                        data: {},
+                        success: function(result) {
+                            var response = JSON.parse(result);
+                            if (response["status"] == 1) {
+                                $('#userHandleHeader').html(response["userHandle"]);
+                            }
+                        },
+                        complete: function(result) {
+                            $('#userHandleHeader').show();
+                        }
+                    });
+
+                });
+
+
+               $("#reportIssueHeaderMail").click(function(){
+                  if($("#issueDescription").val()=="") {
+                      alert("Please describe your issue.");
+                      return false;
+                }
+                $.ajax({
+                    type:"POST",
+                    url:"/ajax/testCasesMail.php",
+                    data:{requestType:'reportIssueHeader',issue:$("#issueDescription").val(),requestUrl:window.location.href},
+                    success:function(data){
+                         $('#commentModalHeader .modal-body p').text( data );
+                         $('#commentModalHeader').modal('show');
+                    }
+                });
+
+              });
+
+</script>
+
+
+    <script> var isDefaultCode = 0;</script>
+    <script> var contestId = 0;</script>
+    <script> var userId = 376873;</script>
+    <link href="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/jquery-ui.css" rel="stylesheet">
+    <script src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/jquery-ui.js.download"></script>
+
+    
+    <div class="fullScreen" style="z-index:1000;overflow-x:hidden;display:none">
+      <div class="leftDiv split" style="overflow-y:auto;width:48%;padding:10px 20px 100px 20px;outline: 10px solid #f1f1f1;">
+          <div class="problemTitle" style="font-weight:bold; font-size:20px">N meetings in one room              <a style="cursor:pointer" id="half" class="screen-resize">
+                  <span class="pull-right glyphicon glyphicon-resize-small"></span>
+          </a>
+          </div>
+      </div>
+      <div class="rightDiv split" style="overflow-y:auto;width:52%;padding:10px 20px 100px 35px"></div>
+    </div>
+   
+	<div class="row fullPageDiv">
+                                          <div class="col-xs-12 col-sm-2 text-center leftTreeDiv">
+                        <!-- get top 10 company and problem tags name here -->
+
+<div class="whiteBgColor">
+	<ul class="tree text-left">
+		<li class="branch">
+			<i class="indicator glyphicon glyphicon-minus-sign toggleTree"></i>
+			<a class="toggleTree">Popular Company Tags</a>
+			<ul class="treeElements">
+		        
+			      <li><a href="https://practice.geeksforgeeks.org/company/Amazon/">Amazon</a></li>
+                              <li><a href="https://practice.geeksforgeeks.org/company/Microsoft/">Microsoft</a></li>
+                              <li><a href="https://practice.geeksforgeeks.org/company/Oracle/">Oracle</a></li>
+                              <li><a href="https://practice.geeksforgeeks.org/company/Samsung/">Samsung</a></li>
+                              <li><a href="https://practice.geeksforgeeks.org/company/Adobe/">Adobe</a></li>
+                              <li><a href="https://practice.geeksforgeeks.org/company/Synopsys/">Synopsys</a></li>
+                              <li><a href="https://practice.geeksforgeeks.org/company/Infosys/">Infosys</a></li>
+                              <li><a href="https://practice.geeksforgeeks.org/company/Cisco/">Cisco</a></li>
+                              <li><a href="https://practice.geeksforgeeks.org/company/Wipro/">Wipro</a></li>
+                              <li><a href="https://practice.geeksforgeeks.org/company/Ola-Cabs/">Ola-Cabs</a></li>
+							  <li><a href="https://practice.geeksforgeeks.org/company/Morgan-Stanley/">Morgan-Stanley</a></li>
+							  <li><a href="https://practice.geeksforgeeks.org/company/Goldman-Sachs/">Goldman-Sachs</a></li>
+
+
+			<a href="https://practice.geeksforgeeks.org/company-tags" style="color:#4cb96b;text-shadow: 1px 1px #ccc;">show more</a>
+    	    </ul>
+		</li>
+	</ul>
+</div>
+  	<div style="margin:10px 0px;">
+       <!-- /27823234/Practice/Vertical_W<270 -->
+    <div id="div-gpt-ad-1523612657686-0" data-google-query-id="CN3I7cmGzNwCFZEjaAodcW0FoQ">
+    <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1523612657686-0'); });
+    </script><div id="google_ads_iframe_/27823234/Practice/Vertical_W&lt;270_0__container__" style="border: 0pt none; display: inline-block; width: 160px; height: 600px;"><iframe frameborder="0" src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/container.html" id="google_ads_iframe_/27823234/Practice/Vertical_W&lt;270_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="160" height="600" data-is-safeframe="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" style="border: 0px; vertical-align: bottom;"></iframe></div>
+    </div>
+
+	</div>
+<div class="whiteBgColor">
+	<ul class="tree text-left">
+		<li class="branch">
+			<i class="indicator glyphicon glyphicon-minus-sign toggleTree"></i>
+			<a class="toggleTree">Popular Topic Tags</a>
+			<ul class="treeElements">
+			      <li><a href="https://practice.geeksforgeeks.org/topics/maths/">Maths</a></li>
+                              <li><a href="https://practice.geeksforgeeks.org/topics/array/">Array</a></li>
+                              <li><a href="https://practice.geeksforgeeks.org/topics/Dynamic-Programming/">Dynamic-Programming</a></li>
+                              <li><a href="https://practice.geeksforgeeks.org/topics/Greedy-Algorithm/">Greedy-Algorithm</a></li>
+                              <li><a href="https://practice.geeksforgeeks.org/topics/hashing/">Hashing</a></li>
+                              <li><a href="https://practice.geeksforgeeks.org/topics/tree/">Tree</a></li>
+                              <li><a href="https://practice.geeksforgeeks.org/topics/bit-algorithm/">Bit-Algorithm</a></li>
+                              <li><a href="https://practice.geeksforgeeks.org/topics/matrix/">Matrix</a></li>
+                              <li><a href="https://practice.geeksforgeeks.org/topics/backtracking/">Backtracking</a></li>
+                              <li><a href="https://practice.geeksforgeeks.org/topics/Operating%20Systems/">Operating System</a></li>
+							  <li><a href="https://practice.geeksforgeeks.org/topics/Linked-List/">Linked-List</a></li>
+							  <li><a href="https://practice.geeksforgeeks.org/topics/Graph/">Graph</a></li>
+
+		        <a href="https://practice.geeksforgeeks.org/topic-tags" style="color:#4cb96b;text-shadow: 1px 1px #ccc;">show more</a>
+    	    </ul>
+		</li>
+	</ul>
+</div>
+<br>
+
+    </div>
+   
+    <div class="col-sm-7 col-xs-12" style="padding-right:2px; padding-left:2px;">
+        <div class="container-fluid">
+        <div class="row">
+            <div id="border" class="well whiteBgColor">
+			    <div class="row" style=" padding-bottom: 5px; border-bottom:1px solid silver;">		
+			        <div class="col-lg-12" style="font-size:25px;">
+			            <strong>N meetings in one room                                                    </strong>
+				        				    </div>
+ 
+                    <div class="col-sm-8 col-xs-12">                          
+                        <h5 style="float:left; margin-top: 0px;">
+                            Submissions:   
+                                <a style="color:green" href="https://practice.geeksforgeeks.org/problem_submissions.php?pid=443">
+                                5299                                </a>
+                                 
+                              Accuracy: <p style="color:green; display:inline">52.84%</p>
+                                                              Difficulty: <u><a href="https://practice.geeksforgeeks.org/Easy/0/0/" style="color:green; display:inline;">Easy</a></u> 
+                             
+                         </h5>
+                    </div>
+                                    </div>
+				<div class="row">
+                    				        <div class="col-md-6">
+                                                            <button type="button" class="btn btn-warning btn-xs showTag" style="border-radius:3px;">Show Topic Tags</button>&nbsp;
+                                <button type="button" class="btn btn-warning btn-xs hideTag" style="border-radius:3px;display:none;">Hide Topic Tags</button>&nbsp; 
+                                                                    <a href="https://practice.geeksforgeeks.org/topics/Greedy/" style="float:left; text-decoration:none;">
+                                    <button type="button" class="btn btn-info btn-xs topicTags" style="display:none">Greedy                                    </button>&nbsp;</a>
+                                    				        </div>
+
+                        <div class="col-md-6">
+                                                            <a href="https://practice.geeksforgeeks.org/company/Amazon/" style="float:right; text-decoration:none;"> &nbsp; 
+                                <button type="button" class="btn btn-info btn-xs">Amazon</button></a>
+                                                                <a href="https://practice.geeksforgeeks.org/company/Flipkart/" style="float:right; text-decoration:none;"> &nbsp; 
+                                <button type="button" class="btn btn-info btn-xs">Flipkart</button></a>
+                                                                <a href="https://practice.geeksforgeeks.org/company/MakeMyTrip/" style="float:right; text-decoration:none;"> &nbsp; 
+                                <button type="button" class="btn btn-info btn-xs">MakeMyTrip</button></a>
+                                				        </div>
+                        				</div>
+			    <br>
+
+                <div class="problemQuestion">
+                    <p><span style="font-size:20px">There is one meeting room in Flipkart. There are n meetings in the form of (S [ i ], F [ i ]) where S [ i ]&nbsp;is start time of meeting i and F&nbsp;[ i ] is finish time of meeting i</span></p>
+
+<p><span style="font-size:20px">What is the maximum number of meetings that can be accommodated in the meeting room ?</span></p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:20px"><strong>Input:</strong></span></p>
+
+<p><span style="font-size:20px">The first line of input consists number of the test cases. The description of T test cases is as follows:</span></p>
+
+<p><span style="font-size:20px">The first line consists of the size of the array, second line has the array containing the&nbsp;starting time of all the meetings&nbsp;each separated by a space, i.e., S&nbsp;[ i ]. And the third line has the array containing the finishing time of all the&nbsp;meetings each separated by a space, i.e., F [ i ].</span></p>
+
+<p><br>
+<span style="font-size:20px"><strong>Output:</strong></span></p>
+
+<p><span style="font-size:20px">In each separate line print the order in which the meetings take place separated by a space.</span></p>
+
+<p><br>
+<span style="font-size:20px"><strong>Constraints:</strong></span></p>
+
+<p><span style="font-size:20px">1 ≤ T ≤ 70</span></p>
+
+<p><span style="font-size:20px">1 ≤ N&nbsp;≤ 100</span></p>
+
+<p><span style="font-size:20px">1 ≤ S[ i ], F[ i ]&nbsp;≤ 100000</span></p>
+
+<p><br>
+<span style="font-size:20px"><strong>Example:</strong></span></p>
+
+<p><span style="font-size:20px">Input:</span></p>
+
+<p><span style="font-size:20px">2<br>
+6<br>
+1 3 0 5 8 5<br>
+2 4 6 7 9 9<br>
+8<br>
+75250 50074 43659 8931 11273 27545 50879 77924<br>
+112960 114515 81825 93424 54316 35533 73383 160252 &nbsp;</span></p>
+
+<p><span style="font-size:20px">Output:</span></p>
+
+<p><span style="font-size:20px">1 2 4 5<br>
+6 7 1 </span></p>
+
+<p>&nbsp;</p>
+                     
+                        <h4>** For More Input/Output Examples Use <a href="https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room/0#ExpectOP">'Expected Output'</a> option **</h4> 
+                                        </div>
+
+                                        <a href="https://auth.geeksforgeeks.org/user/madhuradlakha/practice/">Author: madhuradlakha</a><br>
+                                                
+                    <div class="row">
+                        <div class="col-sm-12 text-right">
+							                                    <a href="https://practice.geeksforgeeks.org/problem_submissions.php?pid=443"><button class="btn btn-primary">All submissions</button></a>
+                                                                    <a href="https://practice.geeksforgeeks.org/problem_submissions.php?pid=443&amp;isSolved=ALL&amp;lang=ALL&amp;user=Self"><button class="btn btn-primary">My submissions</button></a>
+                                	
+                                <a style="font-size:15px;" class="btn btn-info" href="https://practice.geeksforgeeks.org/editorial.php?pid=443" onclick="return confirm(&#39;We strongly recommend to solve this problem by your own before seeing its editorial.\n Do you really want to see its editorial?&#39;)">Editorial</a> 
+                                						</div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="row editorTop">                       
+            <h4 style="float:right;margin-right:15px"><u>
+                </u> 
+            </h4>
+        </div>
+
+        
+            <div class="mainRightDiv">
+                <div id="border" class="row whiteBgColor" style="display: block;padding: 10px;margin-top: 10px">
+                    <div class="col-sm-3 col-xs-6">
+                        <select class="themes form-control">
+                            <option class="themeLight">Theme Light</option>
+                            <option class="themeDark">Dark</option>
+                            <option class="themeMonokai">Monokai</option>
+                            <option class="themeGfG">GeeksforGeeks</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                        <select id="languageDropdown" class="form-control">
+                                                            <option class="lang" style="display:" value="c">C (gcc 5.4)</option>
+                                <option class="lang" style="display:" value="cpp">C++ (g++ 5.4)</option>
+                                <option class="lang" style="display:" value="csharp">C#</option>
+                                <option class="lang" style="display:" value="java">Java (1.8)</option>
+                                <option class="lang" style="display:" value="python3">Python 3</option>
+                                 
+                            <script> var displayLang = ""</script>
+                        </select>
+                    </div>
+                    <div class="col-sm-3 col-xs-12" style="float:right; padding: 5px;">
+                    <a id="full" class="screen-resize" data-toggle="tooltip" title="Click to Split" href="javascript:void(0)" style="float:right; padding: 5px;">
+                        <span class="glyphicon glyphicon-resize-full"></span>
+                    </a>
+                    <a id="zoom" data-toggle="tooltip" title="Click to Full" href="javascript:void(0)" style="float:right; padding: 5px;">
+                        <span class="glyphicon glyphicon-fullscreen"></span>
+                    </a>
+                    <a id="resetEditor" title="Reset Code" style="float:right; padding:5px;">
+                        <span class="glyphicon glyphicon-refresh"></span>
+                    </a>
+                                            <a href="https://auth.geeksforgeeks.org/edit-profile.php" title="Change Default Code" style="float:right; padding:5px;">
+                            <span class="glyphicon glyphicon-cog"></span>
+                        </a>
+                                       </div>
+                </div>
+                                    <script>
+                        var isDefaultCode = 0;
+                        var currentUser = 'pr97';
+                        var sampleTestCases = `2
+6
+1 3 0 5 8 5
+2 4 6 7 9 9
+8
+75250 50074 43659 8931 11273 27545 50879 77924
+112960 114515 81825 93424 54316 35533 73383 160252`;
+                        var track = '';
+                    </script>
+
+                                            <script> 
+                            var def_lang = "";
+                        </script>
+                         				
+
+                <div class="row">
+                    <div id="border">
+                        <div class="editorBlock">    
+                            <pre id="editor" class=" ace_editor ace-monokai ace_dark"><textarea class="ace_text-input" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="opacity: 0; height: 20px; width: 9.52812px; left: 47px; top: 0px;"></textarea><div class="ace_gutter"><div class="ace_layer ace_gutter-layer ace_folding-enabled" style="margin-top: 0px; height: 538px; width: 43px;"><div class="ace_gutter-cell " style="height: 20px;">1</div><div class="ace_gutter-cell " style="height: 20px;">2</div><div class="ace_gutter-cell " style="height: 20px;">3<span class="ace_fold-widget ace_start ace_open" style="height: 20px;"></span></div><div class="ace_gutter-cell " style="height: 20px;">4</div><div class="ace_gutter-cell " style="height: 20px;">5</div><div class="ace_gutter-cell " style="height: 20px;">6</div></div><div class="ace_gutter-active-line" style="top: 0px; height: 20px;"></div></div><div class="ace_scroller" style="left: 43px; right: 0px; bottom: 0px;"><div class="ace_content" style="margin-top: 0px; width: 1061px; height: 538px; margin-left: 0px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 766.25px; visibility: hidden;"></div></div><div class="ace_layer ace_marker-layer"><div class="ace_active-line" style="height:20px;top:0px;left:0;right:0;"></div></div><div class="ace_layer ace_text-layer" style="padding: 0px 4px;"><div class="ace_line" style="height:20px"><span class="ace_keyword">#include</span><span class="ace_constant ace_other"> &lt;stdio.h&gt;</span></div><div class="ace_line" style="height:20px"></div><div class="ace_line" style="height:20px"><span class="ace_storage ace_type">int</span> <span class="ace_identifier">main</span><span class="ace_paren ace_lparen">(</span><span class="ace_paren ace_rparen">)</span> <span class="ace_paren ace_lparen">{</span></div><div class="ace_line" style="height:20px">    <span class="ace_comment">//code</span></div><div class="ace_line" style="height:20px">    <span class="ace_keyword ace_control">return</span> <span class="ace_constant ace_numeric">0</span><span class="ace_punctuation ace_operator">;</span></div><div class="ace_line" style="height:20px"><span class="ace_paren ace_rparen">}</span></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors"><div class="ace_cursor" style="left: 4px; top: 0px; width: 9.52812px; height: 20px;"></div></div></div></div><div class="ace_scrollbar ace_scrollbar-v" style="display: none; width: 22px; bottom: 0px;"><div class="ace_scrollbar-inner" style="width: 22px; height: 120px;"></div></div><div class="ace_scrollbar ace_scrollbar-h" style="display: none; height: 22px; left: 43px; right: 0px;"><div class="ace_scrollbar-inner" style="height: 22px; width: 1104px;"></div></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: visible;"></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; overflow: visible;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div></div></pre>
+                        </div>
+                        <script type="text/javascript">
+                            var pid = "443";
+                            var userid = "376873";
+                        </script>
+                        <script src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/ace.js.download" type="text/javascript" charset="utf-8"></script>
+                        <script src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/ext-language_tools.js.download"></script>
+                        <script>window.urlCdn = "https://cdnpractice.geeksforgeeks.org";</script>
+                        <script src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/problem-page-combo-2.15.js.download"></script>
+                    </div>
+                </div>
+
+                <div id="border" class="row" style="display: block; padding: 10px; background: #ebebeb; margin-top: 1px">
+                    <div class="col-sm-4 col-xs-12">
+                        <input style="float: left; margin: 0px !important" type="checkbox" id="customInputCheckbox">
+                        <span style="float: left; padding-left: 10px;">Test against custom input</span> 
+                    </div>
+                    <div class="col-sm-6 col-xs-12" style="float:right;">
+                                                    <input style="float: right; font-size:13px; margin-top:0px !important" type="submit" class="btn btn-primary" id="testRun" value="Compile &amp; Test">
+                            <input style="float: right; font-size:13px; margin-top:0px !important" type="submit" class="btn btn-danger" id="run" value="Submit">
+                                                        <input style="float:right;font-size:13px;margin-top:0px !important" type="submit" class="btn btn-success" id="expectedRun" value="Expected Outcome">
+                                                </div>
+                </div>
+                <br>
+                                    <div class="row" style="margin-top: 10px;">
+                        <div class="out"><pre style="font-size:17px;"></pre></div>
+                    </div>
+                                </div>	
+                    <br>
+                    <b>Need help with your code? Please use </b><a href="https://ide.geeksforgeeks.org/">ide.geeksforgeeks.org</a><b>, generate link and share the link here.</b>
+            <br><br>
+
+            <div style="display:flex">
+                <button id="comment" class="action-button" style="width: 45%; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 5px 0px, rgba(0, 0, 0, 0) 0px 6px 20px 0px; border-color: rgb(76, 185, 107); border-radius: 4px; display: none;">Load Comments</button>
+            </div>
+
+        </div>
+    </div>
+   
+     
+            <div class="col-sm-3 col-xs-12" id="col_sidebar" style="">
+            
+<div class="border" id="sidebar" style="padding-right:0px;">
+      <!-- /27823234/Practice/Vertical_W<337 -->
+    <div id="div-gpt-ad-1523612657686-1" data-google-query-id="CMfh7cmGzNwCFVgQaAodJNAMjA">
+    <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1523612657686-1'); });
+    </script><div id="google_ads_iframe_/27823234/Practice/Vertical_W&lt;337_0__container__" style="border: 0pt none; display: inline-block; width: 300px; height: 600px;"><iframe frameborder="0" src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/container(1).html" id="google_ads_iframe_/27823234/Practice/Vertical_W&lt;337_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="300" height="600" data-is-safeframe="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" style="border: 0px; vertical-align: bottom;"></iframe></div>
+    </div>
+
+
+  <div id="leaderBoard">
+    <div class="row mainLeaderBoard">
+    <div class="col-sm-12">
+        <a class="whiteLink btn btn-success hoverDarkGreen" href="https://practice.geeksforgeeks.org/ranking.php" data-toggle="tooltip" data-placement="top" title="Click to view Overall Leaderboard" style="color:white;display:block;">Leaderboard (Overall) <span class="glyphicon glyphicon-forward"></span></a>
+    </div>
+    <div class="col-sm-12">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active text-center" style="width:33.33%;">
+                <a class="whiteBorder" href="https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room/0#weekly_score" aria-controls="weekly_score" role="tab" data-toggle="tab" style="margin:0;">Weekly</a>
+            </li>
+            <li role="presentation" class="text-center" style="width:33.33%;">
+                <a class="whiteBorder" href="https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room/0#monthly_score" aria-controls="monthly_score" role="tab" data-toggle="tab" style="margin:0;">Monthly</a>
+            </li>
+            <li role="presentation" class="text-center" style="width:33.33%;">
+                <a class="whiteBorder" href="https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room/0#overall" aria-controls="overall" role="tab" data-toggle="tab" style="margin:0;">Overall</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="weekly_score">
+                <table class="table whiteBgColor" style="margin-bottom:0px;">
+                    <tbody>
+                                                        <tr style="border:1px solid #6AA84F;padding:2px;">
+                                    <td style="text-align:center;width:70%;">
+                                        <a href="https://auth.geeksforgeeks.org/user/Apoorv%20Shrivastav/practice/">
+                                            Apoorv Shrivastav                                        </a>
+                                    </td>
+                                    <td style="text-align:center;width:30%;">
+                                        173                                    </td>
+                                </tr>
+                                                        <tr style="border:1px solid #6AA84F;padding:2px;">
+                                    <td style="text-align:center;width:70%;">
+                                        <a href="https://auth.geeksforgeeks.org/user/MANAN%20Dhyani/practice/">
+                                            MANAN Dhyani                                        </a>
+                                    </td>
+                                    <td style="text-align:center;width:30%;">
+                                        159                                    </td>
+                                </tr>
+                                                        <tr style="border:1px solid #6AA84F;padding:2px;">
+                                    <td style="text-align:center;width:70%;">
+                                        <a href="https://auth.geeksforgeeks.org/user/sush_i/practice/">
+                                            sush_i                                        </a>
+                                    </td>
+                                    <td style="text-align:center;width:30%;">
+                                        99                                    </td>
+                                </tr>
+                                                        <tr style="border:1px solid #6AA84F;padding:2px;">
+                                    <td style="text-align:center;width:70%;">
+                                        <a href="https://auth.geeksforgeeks.org/user/KAPILMANGAL/practice/">
+                                            KAPILMANGAL                                        </a>
+                                    </td>
+                                    <td style="text-align:center;width:30%;">
+                                        94                                    </td>
+                                </tr>
+                                                        <tr style="border:1px solid #6AA84F;padding:2px;">
+                                    <td style="text-align:center;width:70%;">
+                                        <a href="https://auth.geeksforgeeks.org/user/kiki4114/practice/">
+                                            kiki4114                                        </a>
+                                    </td>
+                                    <td style="text-align:center;width:30%;">
+                                        90                                    </td>
+                                </tr>
+                                            <tr id="userRow" style="background-color:#b3ffb3"><td style="text-align:center;width:60%;border:1px solid #6AA84F;padding:2px;"><a href="https://auth.geeksforgeeks.org/user/pr97/practice/">pr97</a></td><td id="userScore" style="width:20%;text-align:center;border:1px solid #6AA84F;padding:2px;">20</td></tr></tbody>
+                </table>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="monthly_score">
+                <table class="table whiteBgColor" style="margin-bottom:0px;">
+                    <tbody>
+                                                        <tr style="border:1px solid #6AA84F;padding:2px;">
+                                    <td style="text-align:center;width:70%;">
+                                        <a href="https://auth.geeksforgeeks.org/user/Apoorv%20Shrivastav/practice/">
+                                            Apoorv Shrivastav                                        </a>
+                                    </td>
+                                    <td style="text-align:center;width:30%;">
+                                        68                                    </td>
+                                </tr>
+                                                        <tr style="border:1px solid #6AA84F;padding:2px;">
+                                    <td style="text-align:center;width:70%;">
+                                        <a href="https://auth.geeksforgeeks.org/user/MANAN%20Dhyani/practice/">
+                                            MANAN Dhyani                                        </a>
+                                    </td>
+                                    <td style="text-align:center;width:30%;">
+                                        66                                    </td>
+                                </tr>
+                                                        <tr style="border:1px solid #6AA84F;padding:2px;">
+                                    <td style="text-align:center;width:70%;">
+                                        <a href="https://auth.geeksforgeeks.org/user/starChasing/practice/">
+                                            starChasing                                        </a>
+                                    </td>
+                                    <td style="text-align:center;width:30%;">
+                                        62                                    </td>
+                                </tr>
+                                                        <tr style="border:1px solid #6AA84F;padding:2px;">
+                                    <td style="text-align:center;width:70%;">
+                                        <a href="https://auth.geeksforgeeks.org/user/Anirudh%20Sharma%202/practice/">
+                                            Anirudh Sharma 2                                        </a>
+                                    </td>
+                                    <td style="text-align:center;width:30%;">
+                                        52                                    </td>
+                                </tr>
+                                                        <tr style="border:1px solid #6AA84F;padding:2px;">
+                                    <td style="text-align:center;width:70%;">
+                                        <a href="https://auth.geeksforgeeks.org/user/ApoorvJoshi/practice/">
+                                            ApoorvJoshi                                        </a>
+                                    </td>
+                                    <td style="text-align:center;width:30%;">
+                                        48                                    </td>
+                                </tr>
+                                            <tr id="userRow" style="background-color:#b3ffb3"><td style="text-align:center;width:60%;border:1px solid #6AA84F;padding:2px;"><a href="https://auth.geeksforgeeks.org/user/pr97/practice/">pr97</a></td><td id="userScore" style="width:20%;text-align:center;border:1px solid #6AA84F;padding:2px;">6</td></tr></tbody>
+                </table>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="overall">
+                <table class="table whiteBgColor" style="margin-bottom:0px;">
+                    <tbody>
+                                                        <tr style="border:1px solid #6AA84F;padding:2px;">
+                                    <td style="text-align:center;width:70%;">
+                                        <a href="https://auth.geeksforgeeks.org/user/akhayrutdinov/practice/">
+                                            akhayrutdinov                                        </a>
+                                    </td>
+                                    <td style="text-align:center;width:30%;">
+                                        4721                                    </td>
+                                </tr>
+                                                        <tr style="border:1px solid #6AA84F;padding:2px;">
+                                    <td style="text-align:center;width:70%;">
+                                        <a href="https://auth.geeksforgeeks.org/user/Quandray/practice/">
+                                            Quandray                                        </a>
+                                    </td>
+                                    <td style="text-align:center;width:30%;">
+                                        3790                                    </td>
+                                </tr>
+                                                        <tr style="border:1px solid #6AA84F;padding:2px;">
+                                    <td style="text-align:center;width:70%;">
+                                        <a href="https://auth.geeksforgeeks.org/user/sanjay05/practice/">
+                                            sanjay05                                        </a>
+                                    </td>
+                                    <td style="text-align:center;width:30%;">
+                                        3668                                    </td>
+                                </tr>
+                                                        <tr style="border:1px solid #6AA84F;padding:2px;">
+                                    <td style="text-align:center;width:70%;">
+                                        <a href="https://auth.geeksforgeeks.org/user/Ibrahim%20Nash/practice/">
+                                            Ibrahim Nash                                        </a>
+                                    </td>
+                                    <td style="text-align:center;width:30%;">
+                                        3664                                    </td>
+                                </tr>
+                                                        <tr style="border:1px solid #6AA84F;padding:2px;">
+                                    <td style="text-align:center;width:70%;">
+                                        <a href="https://auth.geeksforgeeks.org/user/surbhi_7/practice/">
+                                            surbhi_7                                        </a>
+                                    </td>
+                                    <td style="text-align:center;width:30%;">
+                                        2776                                    </td>
+                                </tr>
+                                            <tr id="userRow" style="background-color:#b3ffb3"><td style="text-align:center;width:60%;border:1px solid #6AA84F;padding:2px;"><a href="https://auth.geeksforgeeks.org/user/pr97/practice/">pr97</a></td><td id="userScore" style="width:20%;text-align:center;border:1px solid #6AA84F;padding:2px;">69</td></tr></tbody>
+                </table>
+            </div>
+          </div>
+    </div>
+</div>
+<script>
+    var weeklyTopUsers = ["Apoorv Shrivastav","MANAN Dhyani","sush_i","KAPILMANGAL","kiki4114"];
+    var monthlyTopUsers = ["Apoorv Shrivastav","MANAN Dhyani","starChasing","Anirudh Sharma 2","ApoorvJoshi"];
+    var overallTopUsers = ["akhayrutdinov","Quandray","sanjay05","Ibrahim Nash","surbhi_7"];
+</script>
+  </div>
+<br>
+  
+    <div style="margin:6px 0px;">
+    <!-- /27823234/Practice/Vertical_W<337 -->
+        <div id="div-gpt-ad-1523612657686-2" data-google-query-id="CNbb7cmGzNwCFQeFaAodoNkMRQ">
+            <script>
+                 googletag.cmd.push(function() { googletag.display('div-gpt-ad-1523612657686-2'); });
+            </script><div id="google_ads_iframe_/27823234/Practice/Vertical_W&lt;337_1__container__" style="border: 0pt none; display: inline-block; width: 300px; height: 600px;"><iframe frameborder="0" src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/container(2).html" id="google_ads_iframe_/27823234/Practice/Vertical_W&lt;337_1" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="300" height="600" data-is-safeframe="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" style="border: 0px; vertical-align: bottom;"></iframe></div>
+        </div>
+  </div>
+
+
+  </div>
+
+
+<div class="row">
+    <div class="col-sm-12">
+      <a href="https://practice.geeksforgeeks.org/recentComments.php" class="btn btn-success form-control" type="button" style="background-color:#4CB96B;font-size: 16px;">Recent Comments</a>
+    </div>
+</div>
+</div>
+
+<script>
+    $(window).load(function(){
+        var userRow = '<tr id="userRow" style="background-color:#b3ffb3">';
+        userRow += '<td style="text-align:center;width:60%;border:1px solid #6AA84F;padding:2px;">';
+        userRow += '<a href="https://auth.geeksforgeeks.org/user/'+'pr97'+'/practice/">'+'pr97'+'</a>';
+        userRow += '</td>';
+        userRow += '<td id="userScore" style="width:20%;text-align:center;border:1px solid #6AA84F;padding:2px;">'+''+'</td>';
+        userRow += '</tr>';
+        if ( overallTopUsers.indexOf('pr97') <= -1 ) {
+            $('body').find('#overall').find('table').find('tbody').append(userRow);
+            $('body').find('#overall').find('table').find('tr#userRow').find('td#userScore').html('69');
+        }
+        if ( weeklyTopUsers.indexOf('pr97') <= -1) {
+            $('body').find('#weekly_score').find('table').find('tbody').append(userRow);
+            $('body').find('#weekly_score').find('table').find('tr#userRow').find('td#userScore').html('20');
+        }
+        if ( monthlyTopUsers.indexOf('pr97')<= -1) {
+            $('body').find('#monthly_score').find('table').find('tbody').append(userRow);
+            $('body').find('#monthly_score').find('table').find('tr#userRow').find('td#userScore').html('6');
+        }
+
+        $('.mainLeaderBoard').find("td:contains('pr97')").parent().css('background-color','#b3ffb3');
+    }); 
+  </script>
+
+        </div> 
+                </div>
+    <div class="container-fluid">
+        <div class="col-sm-offset-2 col-sm-7 col-xs-12" style="margin-top: 10px;">
+                <div class="col-sm-12 col-xs-12">
+                    <div id="disqus_thread"></div>
+                        <script>
+                         /**
+                             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                             */
+                            
+                            var disqus_config = function () {
+                                this.page.url = 'https://practice.geeksforgeeks.org/problem-page.php?pid=443';  // Replace PAGE_URL with your page's canonical URL variable
+                                this.page.identifier = 'problem-page.php?pid=443'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                                this.callbacks.onNewComment = [function(comment) { 
+                                    var author = 'madhuradlakha';
+                                    var problem ='N meetings in one room'; 
+                                    var requestType = 'notifyProblemAuthor';
+                                    var problemLink = window.location.href;
+                                    var sendMail = '';  // don't send mail if problem is older than a month
+                                    if(sendMail) {
+                                        $.ajax({
+                                          type:"POST",
+                                          url:"/ajax/monitorDisqusAjax.php",
+                                          data: {requestType: requestType, author: author, problemLink: problemLink, problem: problem, comment: comment},
+                                          dataType: "json",
+                                       });
+                                   }
+                                }];
+                            };
+    
+                            $(function() {
+                                var disqus_div = $("#disqus_thread");
+                                if (disqus_div.size() > 0 ) {
+                                    var ds_loaded = false,
+                                    top = disqus_div.offset().top, // WHERE TO START LOADING
+                                    disqus_data = disqus_div.data(),
+                                    check = function(){
+                                        if ( !ds_loaded && $(window).scrollTop() + $(window).height() > top ) {
+                                            ds_loaded = true;
+                                            for (var key in disqus_data) {
+                                                if (key.substr(0,6) == 'disqus') {
+                                                    window['disqus_' + key.replace('disqus','').toLowerCase()] = disqus_data[key];
+                                                }
+                                            }
+                                    
+                                            var dsq = document.createElement('script'); 
+                                            dsq.type = 'text/javascript';
+                                            dsq.async = true;
+                                            dsq.src = 'https://geeksforgeekspractice.disqus.com/embed.js';
+                                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                                        }
+                                $("#comment").css("display", "none");
+                                    };
+
+                                $(window).scroll(check);
+                                check();
+                            }
+                        });
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+                </div>
+            </div>
+        </div>
+    
+        <!--Edit Modal -->
+    <div class="modal fade" id="editProblemModal">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Select Operation Mode</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Please choose 'ReadOnlyMode' if you needn't to 'Edit' the problem e.g. viewing OJ's solution, TestCase Files (TCFs), TimeLimit etc.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://practice.geeksforgeeks.org/addEditProblem.php?problemId=443" class="btn btn-warning" role="button" target="_blank">EditMode</a>
+                    <a href="https://practice.geeksforgeeks.org/addEditProblem.php?problemId=443&amp;viewMode=1" class="btn btn-info" role="button" target="_blank">ReadOnlyMode</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="customInputTestModal">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Enter Custom Input</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Please note that Custom Input(s) should be mentioned in the same order (format) as stated in the problem description.</p>
+                    <textarea id="testArea" rows="4" style="width:100%;" maxlength="15000"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" type="button" data-dismiss="modal">Close
+                    </button><button class="btn btn-warning" type="button" id="customInputTestRun">Run Code
+                </button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="customInputExpectedModal">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Enter Custom Input</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Please note that Custom Input(s) should be mentioned in the same order (format) as stated in the problem description.</p>
+                    <textarea id="expectedArea" rows="4" style="width:100%;" maxlength="15000"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" type="button" data-dismiss="modal">Close
+                    </button><button class="btn btn-warning" type="button" id="customInputExpectedRun">See Output
+                </button></div>
+            </div>
+        </div>
+    </div>
+
+    
+
+		
+
+<footer>
+    <div id="container-g4g-footer">
+
+        <div id="footer">
+            <div class="logo">
+                <ul class="gfg-logo-ul">
+                    <li>
+                        <a href="https://www.geeksforgeeks.org/">
+                            <img src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/GeeksforGeeksLogoFooterSmall.png" alt="GeeksforGeeks">
+                        </a>
+                    </li>
+                </ul>
+                <ul class="social-ul">
+                    <li>710-B, Advant Navis Business Park,</li>
+                    <li>Sector-142, Noida, Uttar Pradesh - 201305</li>
+        <li>feedback@geeksforgeeks.org</li>
+                </ul>
+                
+            </div>
+            <div class="footer-column">
+                <ul>
+                    <li><b>COMPANY</b></li>
+                    <li><a href="https://www.geeksforgeeks.org/about/">About Us</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/careers/">Careers</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/privacy-policy/">Privacy Policy</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/about/contact-us/">Contact Us</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-column">
+                <ul>
+                    <li><b>LEARN</b></li>
+                    <li><a href="https://www.geeksforgeeks.org/fundamentals-of-algorithms/">Algorithms</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/data-structures/">Data Structures</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/category/program-output/">Languages</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/articles-on-computer-science-subjects-gq/">CS Subjects</a></li>
+                    <li><a href="https://www.youtube.com/geeksforgeeksvideos/">Video Tutorials</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <ul>
+                    <li><b>PRACTICE</b></li>
+                    <li><a href="https://practice.geeksforgeeks.org/company-tags/">Company-wise</a></li>
+                    <li><a href="https://practice.geeksforgeeks.org/topic-tags/">Topic-wise</a></li>
+                    <li><a href="https://practice.geeksforgeeks.org/contests/">Contests</a></li>
+                    <li><a href="https://practice.geeksforgeeks.org/subjective-page.php">Subjective Questions</a></li>
+                    <li><a href="https://practice.geeksforgeeks.org/faq.php">How to begin?</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <ul>
+                    <li><b>CONTRIBUTE</b>
+                    </li><li><a href="https://www.geeksforgeeks.org/contribute/">Write an Article</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/write-interview-experience/">Interview Experience</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/internship/">Internships</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/how-to-contribute-videos-to-geeksforgeeks/">Videos</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom-div footer-bottom-social">
+    <ul class="social-ul" style="padding-left: 0px;">
+                    <li>
+                        <a class="social-link" href="https://www.facebook.com/geeksforgeeks.org/"><div class="social-img-div"></div></a>
+                        <a class="social-link" href="https://in.linkedin.com/company/geeksforgeeks"><div class="social-img-div"></div></a>
+                        <a class="social-link" href="https://play.google.com/store/apps/details?id=free.programming.programming&amp;hl=en"><div class="social-img-div"></div></a>
+                        <a class="social-link" href="https://twitter.com/geeksforgeeks"><div class="social-img-div"></div></a>
+                        <a class="social-link" href="https://www.youtube.com/geeksforgeeksvideos"><div class="social-img-div"></div></a>
+                    </li>
+                </ul>
+  </div>
+  <div class="footer-bottom-div">
+            @geeksforgeeks, <a href="https://creativecommons.org/licenses/by-sa/4.0/" style="color:#fff;">Some rights reserved</a>
+        </div>
+
+    </div>
+</footer>
+
+<script async="" type="text/javascript" src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/fancybar.js.download" id="_fancybar_js"></script>
+	
+	
+
+	
+
+    
+    <style>
+        .aceLineHighlighter {
+            position:absolute;
+            background:#4286f4;
+            z-index:20
+        }
+
+        .fullScreen {
+          position: fixed;
+          z-index: 1000;
+          width: 100vw;
+          height: 100vh;
+          top: 0;
+          left: 0;
+          background: #fff;
+          display:none;
+        }
+
+        .split {
+          float: left;
+          height: 100vh;
+        }
+    </style>
+
+    <script>
+        $(".showTag").click(function(){
+                 $(".showTag").css('display','none'); 
+                 $(".hideTag").css('display','');
+                 $(".topicTags").css('display','');
+                
+        });
+        $(".hideTag").click(function(){
+                 $(".hideTag").css('display','none'); 
+                 $(".showTag").css('display','');
+                 $(".topicTags").css('display','none');
+                
+        });
+    </script>
+
+
+<table cellspacing="0" cellpadding="0" class="gstl_50 gssb_c" style="width: 348px; display: none; top: 52px; position: absolute; left: 504px;"><tbody><tr><td class="gssb_f"></td><td class="gssb_e" style="width: 100%;"></td></tr></tbody></table><iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;" src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/saved_resource.html"></iframe><div id="GOOGLE_INPUT_CHEXT_FLAG" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}" style="display: none;"></div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/3tXFuAe2xUh.html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div><iframe id="google_osd_static_frame_7775888724299" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/saved_resource(1).html"></iframe><script type="text/javascript" src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/saved_resource"></script><script type="text/javascript" src="./N_meetings_in_one_room_Practice _GeeksforGeeks_files/geoip2.js.download"></script></body></html>
