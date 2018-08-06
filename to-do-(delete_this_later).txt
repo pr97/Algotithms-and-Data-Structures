@@ -6,4 +6,6 @@
 
 4. Do this: https://www.geeksforgeeks.org/inorder-succesor-node-binary-tree/
 
-5. 
+5. Practice things like Huffman Coding & Decoding on paper for interviews.
+
+6. 

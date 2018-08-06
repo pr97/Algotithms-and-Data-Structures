@@ -30,6 +30,7 @@ long long min_swaps(string& S, int n){
 			}
 		}
 	}
+	// 	assert(!count);
 	return res;
 }
 
