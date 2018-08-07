@@ -2,20 +2,32 @@
 
 using namespace std;
 
-const long long PRIME = 1000000007;
+#define PRIME 1000000007
+
+long long multiply_under_modulo(long long a, long long b, long long p){
+	long long res = 0;
+	while(b){
+		if(b & 1)
+			res = (res + a) % p;
+		a = (2 * a) % p;
+		b = b >> 1;
+	}
+	return res;
+}
 
 long long power_under_modulo(long long a, long long b, long long p){
 	long long res = 1;
 	a = a % p;
 	while(b > 0){
 		if(b & 1){
-			res = (res * a) % p;
+			res = multiply_under_modulo(res, a, p) % p;
 		}
 		b = b >> 1;
-		a = (a * a) % p;
+		a = multiply_under_modulo(a, a, p) % p;
 	}
 	return res;
 }
+
 
 long long gcd_euclidean(long long a, long long b){
 	long long t;
@@ -35,10 +47,17 @@ int main(){
 	while(t--){
 		long long a, b, n, x, y;
 		cin >> a >> b >> n;
-		x = (power_under_modulo(a, n, PRIME) + power_under_modulo(b, n, PRIME)) % PRIME;
-		y = abs(a - b) % PRIME;
-		cout << gcd_euclidean(14 % 13, 49 % 13) << "\n";
+		// x = (power_under_modulo(a, n, PRIME) + power_under_modulo(b, n, PRIME));
+
+		y = abs(a - b);
+		if(!y){
+			cout << (power_under_modulo(a, n, PRIME) + power_under_modulo(b, n, PRIME)) % PRIME << "\n";
+			continue;
+		}
+		x = power_under_modulo(a, n, y) + power_under_modulo(b, n, y);
+		// cout << gcd_euclidean(14 % 13, 49 % 13) << "\n";
 		// cout << power_under_modulo(a, b, n) << "\n";
+		cout << __gcd(x, y) % PRIME<< "\n";
 	}
 	return 0;
 }
