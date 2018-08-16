@@ -2,13 +2,17 @@
 
 using namespace std;
 
+bool comp(int a, int b){
+	return a < b;
+}
+
 int partition(vector<int>& a, int l, int r){
 	int pivot = rand() % (r - l + 1) + l;
 	swap(a[pivot], a[r]);
 	pivot = r;
 	int i = l - 1;
 	for(int j = l; j <= r - 1; ++j){
-		if(a[j] < a[pivot]){
+		if(comp(a[j], a[pivot])){
 			++i;
 			swap(a[j], a[i]);
 		}
